@@ -13,7 +13,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    Контент
+                    {% for post in posts %}
+                        <div>
+                            <p>published: {{ post.published_date }}</p>
+                            <h1><a href="">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
                 </div>
                 <div class="col-md-4 sidebar">
                     Меню справа
